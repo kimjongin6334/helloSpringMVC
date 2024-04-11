@@ -1,6 +1,6 @@
-package kr.ac.hansung.cse.dao;
+package kr.ac.hansung.cse.controller.dao;
 
-import kr.ac.hansung.cse.model.Offer;
+import kr.ac.hansung.cse.controller.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class OfferDao {
+public class OfferDao { //데베 연결
 
     private JdbcTemplate jdbcTemplate;  // psa(portable service abstraction, sql(x) api
 

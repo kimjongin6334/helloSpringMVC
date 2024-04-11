@@ -1,4 +1,4 @@
-package kr.ac.hansung.cse.controller;
+package kr.ac.hansung.cse.controller.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,10 +20,10 @@ public class HomeController {
     @GetMapping("/")
     public String home(HttpServletRequest request) {
 
-//        String url = request.getRequestURL().toString();
-//        String clientIPaddr = request.getRemoteAddr();
-//
-//        logger.info("Request URL: {}, Client IP: {}", url, clientIPaddr);
+        String url = request.getRequestURL().toString();
+        String clientIPaddr = request.getRemoteAddr();
+
+        logger.info("Request URL: {}, Client IP: {}", url, clientIPaddr);
 
         return "home";
     }

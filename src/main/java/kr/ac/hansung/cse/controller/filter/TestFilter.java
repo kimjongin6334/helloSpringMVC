@@ -1,4 +1,4 @@
-package kr.ac.hansung.cse.filter;
+package kr.ac.hansung.cse.controller.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

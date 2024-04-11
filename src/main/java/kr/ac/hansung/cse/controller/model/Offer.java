@@ -1,4 +1,4 @@
-package kr.ac.hansung.cse.model;
+package kr.ac.hansung.cse.controller.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Offer {
+public class Offer { //사용자가 입력받은 객체 저장
     private int id;
 
     @Size(min=2, max=100, message = "Name must be between 2 and 100 chars")
