@@ -12,8 +12,9 @@
     <title>Title</title>
 </head>
 <body>
-    <c:forEach var="offer" items="${id_offers}" >
-        <p> <c:out value="${offer}"> </c:out> </p>
-    </c:forEach>
+<c:forEach var="course" items="${id_courses}" >
+    <p> <c:out value="${course}"> </c:out> </p>
+</c:forEach>
 </body>
 </html>
+

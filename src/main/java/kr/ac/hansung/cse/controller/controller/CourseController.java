@@ -1,7 +1,7 @@
 package kr.ac.hansung.cse.controller.controller;
 
-import kr.ac.hansung.cse.controller.model.Offer;
-import kr.ac.hansung.cse.controller.service.OfferService;
+import kr.ac.hansung.cse.controller.model.Course;
+import kr.ac.hansung.cse.controller.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,32 +14,31 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-public class OfferController {
+public class CourseController {
 
     // Controller -> Service -> Dao
     @Autowired
-    private OfferService offerService;
+    private CourseService courseService;
 
-    @GetMapping("/offers")
-    public String showOffers(Model model) {
-        List<Offer> offers = offerService.getAllOffers();
-        model.addAttribute("id_offers", offers);
+    @GetMapping("/courses")
+    public String showCourse(Model model) {
+        List<Course> courses = courseService.getAllCourses();
+        model.addAttribute("id_courses", courses);
 
-        return "offers";
+        return "courses";
     }
 
-    @GetMapping("/createoffer")
-    public String createOffer(Model model) {
+    @GetMapping("/createcourse")
+    public String createCourse(Model model) {
 
-        model.addAttribute("offer", new Offer());
+        model.addAttribute("course", new Course());
 
-        return "createoffer";
+        return "createcourse";
     }
 
     @PostMapping("/docreate")
-    public String doCreate(Model model, @Valid Offer offer, BindingResult result) {
+    public String doCreate(Model model, @Valid Course course, BindingResult result) {
 
-        // System.out.println(offer);
         if(result.hasErrors()) {
             System.out.println("== Form data does not validated ==");
 
@@ -49,12 +48,12 @@ public class OfferController {
                 System.out.println(error.getDefaultMessage());
             }
 
-            return "createoffer";
+            return "createcourse";
         }
 
         // Controller -> Service -> Dao
-        offerService.insert(offer);
+        courseService.insert(course);
 
-        return "offercreated";
+        return "coursecreated";
     }
 }
