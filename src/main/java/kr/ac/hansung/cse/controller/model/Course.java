@@ -18,7 +18,8 @@ public class Course {
    private int yearOfAttendance;
    @Size(min=1, max=100, message="Text must be between 1 and 100 chars")
    private int semester;
-   @Size(min=5, max=100, message="Text must be between 5 and 100 chars")
+   @Size(min=5, max=100, message="Text must be between 5 and 100" +
+           "chars")
    private String courseCode;
    @Size(min=5, max=100, message="Text must be between 5 and 100 chars")
    private String courseTitle;
