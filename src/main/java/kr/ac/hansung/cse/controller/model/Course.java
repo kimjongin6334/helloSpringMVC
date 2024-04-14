@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 
 public class Course {
+   private int id;
    @Size(min=1, max=100, message = "Please enter within 100 characters.")
    private int yearOfAttendance;
    @Size(min=1, max=100, message="Text must be between 1 and 100 chars")

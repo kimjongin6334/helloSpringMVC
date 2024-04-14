@@ -18,11 +18,11 @@
         <security:intercept-url pattern="/courses" access="permitAll()"/>
         <security:intercept-url pattern="/createcourse" access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/docreate" access="hasRole('ROLE_USER')"/>
-        <security:intercept-url pattern="/credits" access="hasRole('ROLE_USER')"/> <!-- Added access to credits for authenticated users -->
+        <security:intercept-url pattern="/credits" access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/**" access="denyAll()"/>
 
-        <security:form-login login-page="/login"/>
-        <security:logout/>
+        <security:form-login login-page="/login" default-target-url="/homepage" /> <!-- Added default-target-url -->
+        <security:logout logout-success-url="/login?logout" /> <!-- Specified logout success URL -->
     </security:http>
 </beans>

@@ -51,9 +51,11 @@
         </tr>
         <tr>
             <td></td>
+
             <td><input type="submit" value="수강신청"/> </td>
         </tr>
     </table>
+
 </sf:form>
 </body>
 </html>
